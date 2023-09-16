@@ -1,10 +1,8 @@
 "use client";
-import React from "react";
-import styles from "./loginPage.module.css";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import styles from "./loginPage.module.css";
 
-import { FallingLines } from "react-loader-spinner";
 import Spinner from "../../components/spinner/Spinner";
 
 const LoginPage = () => {

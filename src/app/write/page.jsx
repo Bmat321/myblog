@@ -1,5 +1,4 @@
 "use client";
-
 import { app } from "@/utils/firebase";
 import {
   getDownloadURL,
@@ -98,7 +97,10 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
-      setTimeout(() => router.push(`/posts/${data.slug}`), 5000);
+      setTimeout(
+        () => router.push(`${process.env.NEXTAUTH_URL}/posts/${data.slug}`),
+        5000
+      );
     }
     setSpinner(false);
   };

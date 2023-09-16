@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import Spinner from "../../components/spinner/Spinner";
 import styles from "./writePage.module.css";
+import dynamic from "next/dynamic";
 
 const WritePage = () => {
   const { status } = useSession();

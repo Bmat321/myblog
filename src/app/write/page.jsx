@@ -85,7 +85,7 @@ const WritePage = () => {
 
   const handleSubmit = async () => {
     setSpinner(true);
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`, {
+    const res = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -98,10 +98,7 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
-      setTimeout(
-        () => router.push(`${process.env.NEXTAUTH_URL}/posts/${data.slug}`),
-        5000
-      );
+      setTimeout(() => router.push(`/posts/${data.slug}`), 5000);
     }
     setSpinner(false);
   };

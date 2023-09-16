@@ -16,10 +16,7 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link
-            href={`${process.env.NEXTAUTH_URL}/write`}
-            className={styles.link}
-          >
+          <Link href="/write" className={styles.link}>
             Write
           </Link>
           <span className={styles.link} onClick={signOut}>

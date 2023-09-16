@@ -34,7 +34,7 @@ const Comments = ({ postSlug }) => {
 
   const handleSubmit = async () => {
     setSpinner(true);
-    await fetch("/api/comments", {
+    await fetch(`${process.env.NEXTAUTH_URL}/api/comments`, {
       method: "POST",
       body: JSON.stringify({ desc, postSlug }),
     });

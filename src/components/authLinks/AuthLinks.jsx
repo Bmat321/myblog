@@ -5,8 +5,8 @@ import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
-  const {data, status} = useSession()
-  
+  const { data, status } = useSession();
+
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -16,7 +16,10 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link
+            href={`${process.env.NEXTAUTH_URL}/write`}
+            className={styles.link}
+          >
             Write
           </Link>
           <span className={styles.link} onClick={signOut}>
